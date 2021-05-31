@@ -1,0 +1,10 @@
+name: BetterFarming
+version: ${project.version}
+author: HAL989
+description: Over 30 new hoes!
+website: https://github.com/Gavin296/better-farming
+
+main: me.hal989.betterfarming.BetterFarming
+depend: [Slimefun]
+
+api-version: 1.14
