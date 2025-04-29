@@ -32,7 +32,8 @@ public class BreakablePot extends SlimefunItem {
         p.getInventory().addItem(greenRupee);
         p.getInventory().addItem(greenRupee);
         p.getInventory().addItem(greenRupee);
-        if(Math.random()>0.6){p.getInventory().addItem(greenRupee);
+        if (Math.random() > 0.6) {
+            p.getInventory().addItem(greenRupee);
         }
     }
 }
