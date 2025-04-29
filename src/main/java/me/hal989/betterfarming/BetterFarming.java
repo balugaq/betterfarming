@@ -14,7 +14,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BetterFarming extends JavaPlugin implements SlimefunAddon {
-	public static SlimefunItemStack fierceDeitySword;
     public static ItemGroup betterFarming;
     public static SlimefunItemStack goldenAppleHoe;
     public static SlimefunItemStack enchGoldenAppleHoe;
