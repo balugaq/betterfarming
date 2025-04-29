@@ -46,17 +46,11 @@
   </build>
   
   <dependencies>
-  	<dependency>
-  		<groupId>org.bukkit</groupId>
-  		<artifactId>bukkit</artifactId>
-  		<version>1.15.2-R0.1-SNAPSHOT</version>
-  		<scope>provided</scope>
-  	</dependency>
-
 	  <dependency>
-		  <groupId>com.github.koca2000</groupId>
-		  <artifactId>NoteBlockAPI</artifactId>
-		  <version>-SNAPSHOT</version>
+		  <groupId>org.spigotmc</groupId>
+		  <artifactId>spigot-api</artifactId>
+		  <version>1.18.2-R0.1-SNAPSHOT</version>
+		  <scope>provided</scope>
 	  </dependency>
   	
   	<dependency>
@@ -77,9 +71,9 @@
   	</dependency>
 
 	  <dependency>
-		  <groupId>com.github.slimefun</groupId>
+		  <groupId>com.github.SlimefunGuguProject</groupId>
 		  <artifactId>Slimefun4</artifactId>
-		  <version>RC-16</version>
+		  <version>2024.3</version>
 		  <scope>provided</scope>
   		<exclusions>
   			<exclusion>

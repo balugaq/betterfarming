@@ -1,12 +1,12 @@
 package me.hal989.betterfarming;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.core.researching.Research;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.researches.Research;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -15,7 +15,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class BetterFarming extends JavaPlugin implements SlimefunAddon {
 	private static BetterFarming plugin;
-	public static Category betterFarming;
+	public static ItemGroup betterFarming;
 	public static SlimefunItemStack goldenAppleHoe;
 	public static SlimefunItemStack enchGoldenAppleHoe;
 	public static SlimefunItemStack appleHoe;
@@ -40,8 +40,8 @@ public class BetterFarming extends JavaPlugin implements SlimefunAddon {
 		plugin = this;
 		new BlockBreakHandler(this);
 		NamespacedKey farmingCategoryId = new NamespacedKey(this, "farming_items");
-		CustomItem farmingCategoryItem = new CustomItem(Material.WOODEN_HOE, "&6Addon Jam: Better Farming");
-		betterFarming = new Category(farmingCategoryId, farmingCategoryItem);
+		CustomItemStack farmingCategoryItem = new CustomItemStack(Material.WOODEN_HOE, "&6Addon Jam: Better Farming");
+		betterFarming = new ItemGroup(farmingCategoryId, farmingCategoryItem);
 		//endregion
 		//region Items Defining
 		appleHoe = new SlimefunItemStack("APPLEHOE", Material.WOODEN_HOE, "&cApple Hoe", "", "&7Grants an increased chance to drop","&7an apple when breaking a leaf.");
@@ -135,31 +135,31 @@ public class BetterFarming extends JavaPlugin implements SlimefunAddon {
 		};
 		//endregion
 		//region Declaring Items
-		SlimefunItem greenRupeeItem = new SlimefunItem(betterFarming, greenRupee, RecipeType.SMELTERY, greenRupeeRecipe);
+		SlimefunItem greenRupeeItem = new NotPlaceableItem(betterFarming, greenRupee, RecipeType.SMELTERY, greenRupeeRecipe);
 		greenRupeeItem.register(this);
-		SlimefunItem blueRupeeItem = new SlimefunItem(betterFarming, blueRupee, RecipeType.COMPRESSOR, blueRupeeRecipe);
+		SlimefunItem blueRupeeItem = new NotPlaceableItem(betterFarming, blueRupee, RecipeType.COMPRESSOR, blueRupeeRecipe);
 		blueRupeeItem.register(this);
-		SlimefunItem redRupeeItem = new SlimefunItem(betterFarming, redRupee, RecipeType.COMPRESSOR, redRupeeRecipe);
+		SlimefunItem redRupeeItem = new NotPlaceableItem(betterFarming, redRupee, RecipeType.COMPRESSOR, redRupeeRecipe);
 		redRupeeItem.register(this);
-		SlimefunItem purpleRupeeItem = new SlimefunItem(betterFarming, purpleRupee, RecipeType.COMPRESSOR, purpleRupeeRecipe);
+		SlimefunItem purpleRupeeItem = new NotPlaceableItem(betterFarming, purpleRupee, RecipeType.COMPRESSOR, purpleRupeeRecipe);
 		purpleRupeeItem.register(this);
-		SlimefunItem orangeRupeeItem = new SlimefunItem(betterFarming, orangeRupee, RecipeType.COMPRESSOR, orangeRupeeRecipe);
+		SlimefunItem orangeRupeeItem = new NotPlaceableItem(betterFarming, orangeRupee, RecipeType.COMPRESSOR, orangeRupeeRecipe);
 		orangeRupeeItem.register(this);
-		SlimefunItem silverRupeeItem = new SlimefunItem(betterFarming, silverRupee, RecipeType.COMPRESSOR, silverRupeeRecipe);
+		SlimefunItem silverRupeeItem = new NotPlaceableItem(betterFarming, silverRupee, RecipeType.COMPRESSOR, silverRupeeRecipe);
 		silverRupeeItem.register(this);
-		SlimefunItem goldRupeeItem = new SlimefunItem(betterFarming, goldRupee, RecipeType.COMPRESSOR, goldRupeeRecipe);
+		SlimefunItem goldRupeeItem = new NotPlaceableItem(betterFarming, goldRupee, RecipeType.COMPRESSOR, goldRupeeRecipe);
 		goldRupeeItem.register(this);
-		SlimefunItem kokiriSwordItem = new SlimefunItem(betterFarming, kokiriSword, RecipeType.ENHANCED_CRAFTING_TABLE, kokiriSwordRecipe);
+		SlimefunItem kokiriSwordItem = new NotPlaceableItem(betterFarming, kokiriSword, RecipeType.ENHANCED_CRAFTING_TABLE, kokiriSwordRecipe);
 		kokiriSwordItem.register(this);
-		SlimefunItem magicalSwordItem = new SlimefunItem(betterFarming, magicalSword, RecipeType.ENHANCED_CRAFTING_TABLE, magicalSwordRecipe);
+		SlimefunItem magicalSwordItem = new NotPlaceableItem(betterFarming, magicalSword, RecipeType.ENHANCED_CRAFTING_TABLE, magicalSwordRecipe);
 		magicalSwordItem.register(this);
-		SlimefunItem masterSwordItem = new SlimefunItem(betterFarming, masterSword, RecipeType.ENHANCED_CRAFTING_TABLE, masterSwordRecipe);
+		SlimefunItem masterSwordItem = new NotPlaceableItem(betterFarming, masterSword, RecipeType.ENHANCED_CRAFTING_TABLE, masterSwordRecipe);
 		masterSwordItem.register(this);
-		SlimefunItem appleHoeItem = new SlimefunItem(betterFarming, appleHoe, RecipeType.ENHANCED_CRAFTING_TABLE, appleHoeRecipe);
+		SlimefunItem appleHoeItem = new NotPlaceableItem(betterFarming, appleHoe, RecipeType.ENHANCED_CRAFTING_TABLE, appleHoeRecipe);
 		appleHoeItem.register(this);
-		SlimefunItem goldenAppleHoeItem = new SlimefunItem(betterFarming, goldenAppleHoe, RecipeType.ENHANCED_CRAFTING_TABLE, goldenAppleHoeRecipe);
+		SlimefunItem goldenAppleHoeItem = new NotPlaceableItem(betterFarming, goldenAppleHoe, RecipeType.ENHANCED_CRAFTING_TABLE, goldenAppleHoeRecipe);
 		goldenAppleHoeItem.register(this);
-		SlimefunItem enchGoldenAppleHoeItem = new SlimefunItem(betterFarming, enchGoldenAppleHoe, RecipeType.ENHANCED_CRAFTING_TABLE, enchGoldenAppleHoeRecipe);
+		SlimefunItem enchGoldenAppleHoeItem = new NotPlaceableItem(betterFarming, enchGoldenAppleHoe, RecipeType.ENHANCED_CRAFTING_TABLE, enchGoldenAppleHoeRecipe);
 		enchGoldenAppleHoeItem.register(this);
 		BreakablePot breakablePotItem = new BreakablePot(betterFarming, breakablePot, RecipeType.SMELTERY, potRecipe);
 		breakablePotItem.register(this);
