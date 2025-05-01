@@ -1,5 +1,11 @@
 package me.hal989.betterfarming;
 
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
+
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -7,11 +13,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class BetterFarming extends JavaPlugin implements SlimefunAddon {
     public static ItemGroup betterFarming;
@@ -44,25 +45,25 @@ public class BetterFarming extends JavaPlugin implements SlimefunAddon {
         plugin = this;
         new BlockBreakHandler(this);
         NamespacedKey farmingCategoryId = new NamespacedKey(this, "farming_items");
-        CustomItemStack farmingCategoryItem = new CustomItemStack(Material.WOODEN_HOE, "&6Addon Jam: Better Farming");
+        CustomItemStack farmingCategoryItem = new CustomItemStack(Material.WOODEN_HOE, "&6高级农场");
         betterFarming = new ItemGroup(farmingCategoryId, farmingCategoryItem);
         //endregion
         //region Items Defining
-        appleHoe = new SlimefunItemStack("APPLEHOE", Material.WOODEN_HOE, "&cApple Hoe", "", "&7Grants an increased chance to drop", "&7an apple when breaking a leaf.");
-        goldenAppleHoe = new SlimefunItemStack("GOLDAPPLEHOE", Material.GOLDEN_HOE, "&6Golden Apple Hoe", "", "&7Grants a chance to drop", "&7a golden apple when breaking a leaf.");
-        enchGoldenAppleHoe = new SlimefunItemStack("ENCHGOLDAPPLEHOE", Material.GOLDEN_HOE, "&dGolden Apple Hoe", "", "&7Grants a chance to drop", "&7an enchanted golden apple when breaking a leaf.");
-        greenRupee = new SlimefunItemStack("GREENRUPEE", Material.EMERALD, "&aGreen Rupee", "");
-        breakablePot = new SlimefunItemStack("BREAKABLEPOT", Material.BOWL, "&6Breakable Pot", "", "&fRight Click - Receive 4-5 rupees");
-        blueRupee = new SlimefunItemStack("BLUERUPEE", Material.LAPIS_LAZULI, "&1Blue Rupee", "");
-        redRupee = new SlimefunItemStack("REDRUPEE", Material.RED_DYE, "&cRed Rupee", "");
-        purpleRupee = new SlimefunItemStack("PURPLERUPEE", Material.PURPLE_DYE, "&5Purple Rupee", "");
-        orangeRupee = new SlimefunItemStack("ORANGERUPEE", Material.ORANGE_DYE, "&6Orange Rupee", "");
-        silverRupee = new SlimefunItemStack("SILVERRUPEE", Material.LIGHT_GRAY_DYE, "&7Silver Rupee", "");
-        goldRupee = new SlimefunItemStack("GOLDRUPEE", Material.GLOWSTONE_DUST, "&eGold Rupee", "");
-        kokiriSword = new SlimefunItemStack("KOKIRISWORD", Material.WOODEN_SWORD, "&aKokiri Sword", "", "&aBreaking grass with this may", "&aresult in rupees dropping.");
-        magicalSword = new SlimefunItemStack("MAGICALSWORD", Material.IRON_SWORD, "&fMagical Sword", "", "&aBreaking grass with this may", "&aresult in rupees dropping.");
-        masterSword = new SlimefunItemStack("MASTERSWORD", Material.DIAMOND_SWORD, "&bMaster Sword", "", "&aBreaking grass with this may", "&aresult in rupees dropping.", "&aRupee drops boosted while you are at full health.");
-        //SlimefunItemStack fierceDeitySword = new SlimefunItemStack("FIERCEDEITYSWORD", Material.DIAMOND_SWORD, "&cFierce Deity Sword", "", "&aHitting enemies with this may","&aresult in rupees dropping.","&6Boosted while you are at full health.");
+        appleHoe = new SlimefunItemStack("APPLEHOE", Material.WOODEN_HOE, "&c苹果锄头", "", "&7破坏树叶时有更高的几率掉落", "&7一个苹果。");
+        goldenAppleHoe = new SlimefunItemStack("GOLDAPPLEHOE", Material.GOLDEN_HOE, "&6金苹果锄头", "", "&7破坏树叶时有几率掉落", "&7一个金苹果。");
+        enchGoldenAppleHoe = new SlimefunItemStack("ENCHGOLDAPPLEHOE", Material.GOLDEN_HOE, "&d附魔金苹果锄头", "", "&7破坏树叶时有几率掉落", "&7一个附魔金苹果。");
+        greenRupee = new SlimefunItemStack("GREENRUPEE", Material.EMERALD, "&a绿色卢比", "");
+        breakablePot = new SlimefunItemStack("BREAKABLEPOT", Material.BOWL, "&6易碎罐头", "", "&f右键点击 - 获得 4-5 个卢比");
+        blueRupee = new SlimefunItemStack("BLUERUPEE", Material.LAPIS_LAZULI, "&1蓝色卢比", "");
+        redRupee = new SlimefunItemStack("REDRUPEE", Material.RED_DYE, "&c红色卢比", "");
+        purpleRupee = new SlimefunItemStack("PURPLERUPEE", Material.PURPLE_DYE, "&5紫色卢比", "");
+        orangeRupee = new SlimefunItemStack("ORANGERUPEE", Material.ORANGE_DYE, "&6橙色卢比", "");
+        silverRupee = new SlimefunItemStack("SILVERRUPEE", Material.LIGHT_GRAY_DYE, "&7银卢比", "");
+        goldRupee = new SlimefunItemStack("GOLDRUPEE", Material.GLOWSTONE_DUST, "&e金卢比", "");
+        kokiriSword = new SlimefunItemStack("KOKIRISWORD", Material.WOODEN_SWORD, "&a科基利剑", "", "&a用这把剑破坏草可能会", "&a掉落卢比。");
+        magicalSword = new SlimefunItemStack("MAGICALSWORD", Material.IRON_SWORD, "&f魔法剑", "", "&a用这把剑破坏草可能会", "&a掉落卢比。");
+        masterSword = new SlimefunItemStack("MASTERSWORD", Material.DIAMOND_SWORD, "&b大师之剑", "", "&a用这把剑破坏草可能会", "&a掉落卢比。", "&a当你满血时，卢比掉落几率提升。");
+        // SlimefunItemStack fierceDeitySword = new SlimefunItemStack("FIERCEDEITYSWORD", Material.DIAMOND_SWORD, "&c勇者之剑", "", "&a用这把剑攻击敌人可能会","&a掉落卢比。","&6当你满血时，掉落几率提升。");
         masterSword.addUnsafeEnchantment(Enchantment.DURABILITY, 3);
         enchGoldenAppleHoe.addUnsafeEnchantment(Enchantment.DURABILITY, 5);
         //endregion
@@ -170,15 +171,15 @@ public class BetterFarming extends JavaPlugin implements SlimefunAddon {
         //endregion
         //region Adding Research
         NamespacedKey lozSwordsResearchId = new NamespacedKey(this, "lozswords_r");
-        Research lozSwordsResearch = new Research(lozSwordsResearchId, 425689, "It's Dangerous To Go Alone!", 22);
+        Research lozSwordsResearch = new Research(lozSwordsResearchId, 425689, "一个人去很危险！", 22);
         lozSwordsResearch.addItems(kokiriSword, magicalSword, masterSword);
         lozSwordsResearch.register();
         NamespacedKey potResearchId = new NamespacedKey(this, "pot_r");
-        Research potResearch = new Research(potResearchId, 425691, "Breakable Pots", 5);
+        Research potResearch = new Research(potResearchId, 425691, "易碎的罐头", 5);
         potResearch.addItems(breakablePot);
         potResearch.register();
         NamespacedKey rupeeResearchId = new NamespacedKey(this, "rupee_r");
-        Research rupeeResearch = new Research(rupeeResearchId, 425691, "Getting A Little Richer", 20);
+        Research rupeeResearch = new Research(rupeeResearchId, 425691, "致富经", 20);
         rupeeResearch.addItems(breakablePot);
         rupeeResearch.register();
         //endregion
@@ -194,7 +195,7 @@ public class BetterFarming extends JavaPlugin implements SlimefunAddon {
     @Override
     public String getBugTrackerURL() {
         // You can return a link to your Bug Tracker instead of null here
-        return "https://github.com/Gavin296/betterfarming/issues";
+        return "https://github.com/balugaq/betterfarming/issues";
     }
 
     @Override
